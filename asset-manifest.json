@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/NatsuMune/dice-pwa/static/css/main.7f088b30.chunk.css",
+    "main.js": "/NatsuMune/dice-pwa/static/js/main.75e6eff7.chunk.js",
+    "main.js.map": "/NatsuMune/dice-pwa/static/js/main.75e6eff7.chunk.js.map",
+    "runtime-main.js": "/NatsuMune/dice-pwa/static/js/runtime-main.3d953c4e.js",
+    "runtime-main.js.map": "/NatsuMune/dice-pwa/static/js/runtime-main.3d953c4e.js.map",
+    "static/css/2.0542f091.chunk.css": "/NatsuMune/dice-pwa/static/css/2.0542f091.chunk.css",
+    "static/js/2.58eed82d.chunk.js": "/NatsuMune/dice-pwa/static/js/2.58eed82d.chunk.js",
+    "static/js/2.58eed82d.chunk.js.map": "/NatsuMune/dice-pwa/static/js/2.58eed82d.chunk.js.map",
+    "index.html": "/NatsuMune/dice-pwa/index.html",
+    "service-worker.js": "/NatsuMune/dice-pwa/service-worker.js",
+    "service-worker.js.map": "/NatsuMune/dice-pwa/service-worker.js.map",
+    "static/css/2.0542f091.chunk.css.map": "/NatsuMune/dice-pwa/static/css/2.0542f091.chunk.css.map",
+    "static/css/main.7f088b30.chunk.css.map": "/NatsuMune/dice-pwa/static/css/main.7f088b30.chunk.css.map",
+    "static/js/2.58eed82d.chunk.js.LICENSE.txt": "/NatsuMune/dice-pwa/static/js/2.58eed82d.chunk.js.LICENSE.txt",
+    "static/media/arrow.e4fefebb.svg": "/NatsuMune/dice-pwa/static/media/arrow.e4fefebb.svg",
+    "static/media/dealer.79936c5b.png": "/NatsuMune/dice-pwa/static/media/dealer.79936c5b.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3d953c4e.js",
+    "static/css/2.0542f091.chunk.css",
+    "static/js/2.58eed82d.chunk.js",
+    "static/css/main.7f088b30.chunk.css",
+    "static/js/main.75e6eff7.chunk.js"
+  ]
+}
