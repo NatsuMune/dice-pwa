@@ -1,38 +1,77 @@
 .App {
-  text-align: center;
+    margin-top: 35%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App>* {
+    text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.button {
+    outline-style     : none;
+    font-size         : xx-large;
+    color             : white;
+    -webkit-appearance: none;
+    padding           : 15px 25px;
+    background-color  : black;
+    border-radius     : 45px;
+    display           : inline-block;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.result {
+    color      : white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    display    : block;
+    font-size  : 40px;
+    z-index    : 1;
+    white-space: nowrap;
 }
 
-.App-link {
-  color: #61dafb;
+#p0 {
+    position: absolute;
+
+    bottom   : 40px;
+    left     : 50%;
+    transform: translateX(-50%);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#p1 {
+    position        : absolute;
+    right           : 40px;
+    top             : 50%;
+    text-orientation: sideways;
+    writing-mode    : vertical-lr;
+    transform       : translateY(-50%) rotate(180deg);
+}
+
+#p2 {
+    position : absolute;
+    top      : 40px;
+    left     : 50%;
+    transform: translateX(-50%) rotate(-180deg);
+}
+
+#p3 {
+    position        : absolute;
+    left            : 40px;
+    top             : 50%;
+    text-orientation: sideways;
+    writing-mode    : vertical-lr;
+    transform       : translateY(-50%);
+}
+
+#dealer {
+    opacity  : 0.1;
+    position : absolute;
+    bottom   : 0;
+    left     : 50%;
+    transform: translateX(-50%);
+    z-index  : 0;
+}
+
+#arrow {
+    position: absolute;
+    opacity : 0.5;
+    top     : calc(50vh + 200px);
+    left    : 50%;
+    width   : 150px;
 }
