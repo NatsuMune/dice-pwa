@@ -71,8 +71,8 @@
     width   : 150px;
 }
 
-.App {
-    margin-top: 35%;
+.CardPicking {
+    margin-top: calc(50vh - 200px);
 
     &>* {
         text-align: center;
@@ -94,7 +94,7 @@
 }
 
 .Wind {
-    margin-top: 40%;
+    margin-top: calc(50vh - 200px);
 
     &>* {
         text-align: center;
@@ -108,13 +108,17 @@
         top             : calc(50vh + 100px);
         transform       : translateX(-50%);
         font-size       : x-large;
+        max-width       : 400px;
 
         th,
         td {
             padding: 10px 15px;
         }
 
-        tr {}
+        thead tr th {
+            padding      : 20px;
+            border-bottom: 1px solid lightgrey;
+        }
 
     }
 }

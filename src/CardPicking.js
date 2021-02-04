@@ -149,7 +149,7 @@ function Cardpicking(props) {
     }
 
     return (
-        <div className="App">
+        <div className="CardPicking">
             <ReactDice numDice={2}
                 rollDone={rollDoneCallback}
                 dieSize={80}
