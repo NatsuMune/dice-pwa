@@ -6,6 +6,9 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "hookrouter": "^1.2.5",
+    "lodash": "^4.17.20",
+    "node-sass": "4.14.1",
     "react": "^17.0.1",
     "react-dice-complete": "^1.2.1",
     "react-dom": "^17.0.1",
@@ -52,6 +55,5 @@
   },
   "devDependencies": {
     "gh-pages": "^3.1.0"
-  },
-  "homepage": "http://NatsuMune.github.io/dice-pwa"
+  }
 }
