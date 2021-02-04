@@ -111,7 +111,7 @@ function Cardpicking(props) {
                 }
             }
             result = <span> {pickCardPhrase ? <span>{pickCardPhrase} <br /></span> : null}
-        总计：{firstRoll} + {secondRoll} = {firstRoll + secondRoll}
+        总计：{firstRoll} + {secondRoll} = <span style={{ fontSize: 60, textDecorationLine: 'underline', textDecorationThickness: 3, textUnderlineOffset: 7 }}>{firstRoll + secondRoll}</span>
             </span>
         } else if (pickcardStartPoint) {
             // 打混儿阶段
@@ -143,7 +143,7 @@ function Cardpicking(props) {
                     pickCardPhrase = `混儿：第 ${pickcardStartPoint.fromRight} 张`
                 }
             }
-            result = <span>总计：{firstRoll} + {secondRoll} = {firstRoll + secondRoll} <br /> {pickCardPhrase}</span>
+            result = <span>总计：{firstRoll} + {secondRoll} =<span style={{ fontSize: 60, textDecorationLine: 'underline', textDecorationThickness: 3, textUnderlineOffset: 7 }}>{firstRoll + secondRoll}</span>  <br /> {pickCardPhrase}</span>
         }
         return result;
     }
