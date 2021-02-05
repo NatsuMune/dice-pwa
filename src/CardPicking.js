@@ -173,8 +173,8 @@ function Cardpicking(props) {
             <div id="p1" className="result">{getPhrase(1)}</div>
             <div id="p2" className="result">{getPhrase(2)}</div>
             <div id="p3" className="result">{getPhrase(3)}</div>
-            <div><img src={dealer} id="dealer" alt="dealer" /></div>
-            <div><img src={arrow} id="arrow" alt="arrow"
+            <div><img src={dealer} id="dealer" alt="dealer" draggable="false" /></div>
+            <div><img src={arrow} id="arrow" alt="arrow" draggable="false"
                 className={`direction-${pickcardStartPoint?.direction}`}
                 style={{ visibility: pickcardStartPoint ? 'unset' : 'hidden' }} /></div>
         </div>
