@@ -1,0 +1,12 @@
+.face {
+    border-radius: 15px;
+    overflow     : hidden;
+    border-style : outset;
+
+    &.one,
+    &.four {
+        .dot {
+            background-color: red !important;
+        }
+    }
+}

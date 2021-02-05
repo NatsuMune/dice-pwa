@@ -152,7 +152,7 @@ function Cardpicking(props) {
                 rollDone={rollDoneCallback}
                 dieSize={80}
                 faceColor="white"
-                dotColor="red"
+                dotColor="midnightblue"
                 rollTime={0.5}
                 disableIndividual={true}
                 defaultRoll={12}
