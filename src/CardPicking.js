@@ -26,8 +26,10 @@ function Cardpicking(props) {
             // if it's the second roll
             setSecondRoll(num);
             const total = firstRoll + num;
+            let pickDirection = total < 17 ? direction : direction - 1;
+            pickDirection = (pickDirection + 4) % 4;
             setPickcardStartPoint({
-                direction: total < 17 ? direction : direction - 1,
+                direction: pickDirection,
                 fromRight: total < 17 ? total : total - 17
             });
             setDirection(2);  // Set direction for opposite player to roll dragon
@@ -43,7 +45,7 @@ function Cardpicking(props) {
                 });
             } else {
                 setPickcardStartPoint({
-                    direction: pickDirection === 3 ? 0 : pickDirection + 1,
+                    direction: (pickDirection + 1) % 4,
                     fromRight: 17 - (num - pickFromRight) + 1,
                     fromLeft: num - pickFromRight
                 });
@@ -62,7 +64,9 @@ function Cardpicking(props) {
         } else {
             setButtonShow(false);
             setTimeout(() => setButtonShow(true), 500);
-            diceRef.rollAll();
+            const num1 = parseInt(prompt());
+            const num2 = parseInt(prompt());
+            diceRef.rollAll([num1, num2]);
         }
     }
 
@@ -102,48 +106,44 @@ function Cardpicking(props) {
                 }
                 if (pickcardStartPoint.fromRight <= 8) {
                     if (pickcardStartPoint.fromRight === 0) {
-                        pickCardPhrase = `从${rightHandPhrase}起抓`;
+                        pickCardPhrase = `抓牌：从${rightHandPhrase}起抓`;
                     } else {
-                        pickCardPhrase = `从${rightHandPhrase}起留 ` + pickcardStartPoint.fromRight + " 张";
+                        pickCardPhrase = `抓牌：从${rightHandPhrase}起留 ` + pickcardStartPoint.fromRight + " 张";
                     }
                 } else {
-                    pickCardPhrase = `从${leftHandPhrase}起抓 ` + (17 - pickcardStartPoint.fromRight) + " 张";
+                    pickCardPhrase = `抓牌：从${leftHandPhrase}起抓 ` + (17 - pickcardStartPoint.fromRight) + " 张";
                 }
             }
             result = <span> {pickCardPhrase ? <span>{pickCardPhrase} <br /></span> : null}
-        总计：{firstRoll} + {secondRoll} = <span style={{ fontSize: 60, textDecorationLine: 'underline', textDecorationThickness: 3, textUnderlineOffset: 7 }}>{firstRoll + secondRoll}</span>
+        点数：{firstRoll} + {secondRoll} = <span style={{ fontSize: 60, textDecorationLine: 'underline', textDecorationThickness: 3, textUnderlineOffset: 7 }}>{firstRoll + secondRoll}</span>
             </span>
         } else if (pickcardStartPoint) {
             // 打混儿阶段
-            let pickCardPhrase;
-            if (d === 0) {
-                let rightHandPhrase = "右侧";
-                let leftHandPhrase = "左侧";
-                switch (pickcardStartPoint.direction) {
-                    case 1:
-                        rightHandPhrase = "远端";
-                        leftHandPhrase = "近端";
-                        break;
-                    case 2:
-                        rightHandPhrase = "左侧";
-                        leftHandPhrase = "右侧";
-                        break;
-                    case 3:
-                        rightHandPhrase = "近端";
-                        leftHandPhrase = "远端";
-                        break;
-                    default:
-                        break;
-                }
-                if (pickcardStartPoint.fromRight < pickcardStartPoint.fromLeft) {
-                    pickCardPhrase = `混儿：从${rightHandPhrase}起第 ${pickcardStartPoint.fromRight} 张`;
-                } else if (pickcardStartPoint.fromRight > pickcardStartPoint.fromLeft) {
-                    pickCardPhrase = `混儿：从${leftHandPhrase}起第 ${pickcardStartPoint.fromLeft} 张`;
-                } else {
-                    pickCardPhrase = `混儿：第 ${pickcardStartPoint.fromRight} 张`
-                }
+            let rightHandPhrase = "右侧";
+            let leftHandPhrase = "左侧";
+            switch ((pickcardStartPoint.direction - d + 4) % 4) {
+                case 1:
+                    rightHandPhrase = "远端";
+                    leftHandPhrase = "近端";
+                    break;
+                case 2:
+                    rightHandPhrase = "左侧";
+                    leftHandPhrase = "右侧";
+                    break;
+                case 3:
+                    rightHandPhrase = "近端";
+                    leftHandPhrase = "远端";
+                    break;
+                default:
+                    break;
             }
-            result = <span>总计：{firstRoll} + {secondRoll} =<span style={{ fontSize: 60, textDecorationLine: 'underline', textDecorationThickness: 3, textUnderlineOffset: 7 }}>{firstRoll + secondRoll}</span>  <br /> {pickCardPhrase}</span>
+            if (pickcardStartPoint.fromRight < pickcardStartPoint.fromLeft) {
+                result = `混儿：从${rightHandPhrase}起第 ${pickcardStartPoint.fromRight} 张`;
+            } else if (pickcardStartPoint.fromRight > pickcardStartPoint.fromLeft) {
+                result = `混儿：从${leftHandPhrase}起第 ${pickcardStartPoint.fromLeft} 张`;
+            } else {
+                result = `混儿：第 ${pickcardStartPoint.fromRight} 张`
+            }
         }
         return result;
     }
