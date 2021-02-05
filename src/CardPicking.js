@@ -64,9 +64,7 @@ function Cardpicking(props) {
         } else {
             setButtonShow(false);
             setTimeout(() => setButtonShow(true), 500);
-            const num1 = parseInt(prompt());
-            const num2 = parseInt(prompt());
-            diceRef.rollAll([num1, num2]);
+            diceRef.rollAll();
         }
     }
 
