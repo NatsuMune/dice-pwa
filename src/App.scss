@@ -66,13 +66,36 @@
 #arrow {
     position: absolute;
     opacity : 0.5;
-    top     : calc(50vh + 200px);
-    left    : 50%;
     width   : 150px;
+
+    // transform: `translate(-50%, -50%) rotate(${-pickcardStartPoint?.direction * 90}deg)`
+    &.direction-0 {
+        top      : calc(50vh + 200px);
+        left     : 50vw;
+        transform: translate(-50%, -50%);
+    }
+
+    &.direction-1 {
+        top      : 50vh;
+        left     : calc(50vw + 200px);
+        transform: translate(-50%, -50%) rotate(-90deg);
+    }
+
+    &.direction-2 {
+        top      : calc(50vh - 300px);
+        left     : 50vw;
+        transform: translate(-50%, -50%) rotate(180deg);
+    }
+
+    &.direction-3 {
+        top      : 50vh;
+        right    : calc(50vw + 50px);
+        transform: translate(-50%, -50%) rotate(90deg);
+    }
 }
 
 .CardPicking {
-    margin-top: calc(50vh - 200px);
+    margin-top: calc(50vh - 120px);
 
     &>* {
         text-align: center;

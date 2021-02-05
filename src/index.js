@@ -4,9 +4,9 @@ import './index.css';
 import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 
+// Fix scrollbar
 const $body = document.querySelector('body');
-let scrollPosition = 0;
-scrollPosition = window.pageYOffset;
+let scrollPosition = window.pageYOffset;
 $body.style.overflow = 'hidden';
 $body.style.position = 'fixed';
 $body.style.top = `-${scrollPosition}px`;

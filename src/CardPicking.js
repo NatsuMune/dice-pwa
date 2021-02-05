@@ -162,8 +162,8 @@ function Cardpicking(props) {
                     onClick={rollIt}
                     style={{
                         position: 'absolute',
-                        left: '50%',
-                        top: '50%',
+                        left: '50vw',
+                        top: 'calc(50vh + 80px)',
                         visibility: buttonShow ? 'unset' : 'hidden',
                         transform: `translate(-50%, -50%) rotate(${-direction * 90}deg)`
                     }}>{!secondRoll ? "掷骰子" : !dragonRoll ? "打混儿" : "再来一局"}</button>
@@ -174,10 +174,9 @@ function Cardpicking(props) {
             <div id="p2" className="result">{getPhrase(2)}</div>
             <div id="p3" className="result">{getPhrase(3)}</div>
             <div><img src={dealer} id="dealer" alt="dealer" /></div>
-            <div><img src={arrow} id="arrow" alt="arrow" style={{
-                visibility: pickcardStartPoint ? 'unset' : 'hidden',
-                transform: `translate(-50%, -50%) rotate(${-pickcardStartPoint?.direction * 90}deg)`
-            }} /></div>
+            <div><img src={arrow} id="arrow" alt="arrow"
+                className={`direction-${pickcardStartPoint?.direction}`}
+                style={{ visibility: pickcardStartPoint ? 'unset' : 'hidden' }} /></div>
         </div>
     );
 }
